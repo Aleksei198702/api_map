@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Простая карта</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--подключение к сss стилю --> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <pre>     Добро пожаловать на главную страницу нашего сайта! 
+         Наша карта предоставляет удобный инструмент для поиска и навигации.
+         Вы можете искать места, получать маршруты и использовать интерактивные функции. 
+         Мы постоянно работаем над улучшением функционала. 
+         Надеемся, что вы найдете нашу карту полезной!</pre>
+    <div id="map" class="map"></div>
+    <!--подкючение к javascript 
+    //ttps://api-maps.yandex.ru/2.1/?apikey=ВАш АПИ ключ&lang=en_US выглядит как набор цифр и букв можно получить здесь-https://developer.tech.yandex.ru/services-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=bc37123d-920a-4dbe-a6ad-281e597f6f48&lang=ru_RU"></script>
+    <script type="module" src="app_wt.js"></script>
+    <div class="weather">
+        <h2 class="weather__title">Погода в городе <span id="cityName"></span></h2>
+        <div class="weather__time">
+            <p class="weather__time" id="currentDateTime"></p>
+            <p class="weather__date" id="currentDate"></p>
+            <p class="weather__status" id="weatherDescription"></p>
+        </div>
+        <div class="weather__forecast">
+            <span class="weather__min" id="minTemp"></span>
+            <span class="weather__max" id="maxTemp"></span>
+        </div>
+        <p class="weather__humidity" id="humidity"></p>
+        <p class="weather__wind" id="windSpeed"></p>
+    </div>
+    
+    <script type="module" src="app.js"></script>
+    <input type="file" id="fileInput">
+    <canvas id="canvas"></canvas>
+
+    <h1>События и мероприятия</h1>
+    
+    <h2>Предстоящие события</h2>
+    <div id="events"></div>
+    
+    <h2>Моё расписание</h2>
+    <ul id="schedule"></ul>
+    
+    <h2>Добавить событие</h2>
+    <form id="eventForm">
+        <input type="text" id="eventName" placeholder="Название события" required>
+        <input type="datetime-local" id="eventDateTime" required>
+        <button type="submit">Добавить</button>
+    </form>
+    
+</body>
+</html
